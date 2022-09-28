@@ -88,7 +88,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
+
+                  @foreach($jobSeeker as $key => $job_seeker)
+                  <tr>
+                    <td>{{$key+1}}</td>
+                    <td>{{$job_seeker->name}}</td>
+                    <td>{{$job_seeker->email}}</td>
+                    <td>{{$job_seeker->phone}}</td>
+                    <td>{{$job_seeker->experience}}</td>
+                    <td>{{$job_seeker->photo}}</td>
+                    <td>{{$job_seeker->resume}}</td>
+                    <td><a href="{{route('jobSeekerEdit',$job_seeker->id)}}" class="btn btn-warning">Edit</a> &nbsp;&nbsp; <a href="#" class="btn btn-danger">Delete</a></td>
+                  @endforeach
+                  <tr>
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->

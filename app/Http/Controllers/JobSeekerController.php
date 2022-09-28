@@ -27,7 +27,8 @@ class JobSeekerController extends Controller
      */
     public function adminDashboard()
     {
-        return view('job_seeker.admin_dashboard');
+        $data['jobSeeker'] = JobSeeker::where('status',1)->get();
+        return view('job_seeker.admin_dashboard',$data);
     }
 
     /**
@@ -99,7 +100,9 @@ class JobSeekerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['jobSeekerEdit'] = JobSeeker::where('id',$id)->first();
+        $data['jobLocation'] = JobLocation::get();
+        return view('job_seeker.job_seeker_register',$data);
     }
 
     /**

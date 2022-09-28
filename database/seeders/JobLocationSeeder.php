@@ -13,20 +13,18 @@ class JobLocationSeeder extends Seeder
      */
     public function run()
     {
-        JobLocation::create([
-            'name' => 'Chennai',
-        ]);
-		 JobLocation::create([
-            'name' => 'Coimbatore',
-        ]);
-		 JobLocation::create([
-            'name' => 'Trichy',
-        ]);
-		 JobLocation::create([
-            'name' => 'selam',
-        ]);
-		 JobLocation::create([
-            'name' => 'Erode',
-        ]);
+
+        $Job_Location = [
+
+            ['name' => 'Chennai'],
+            ['name' => 'Coimbatore'],
+            ['name' => 'Madurai'],
+            ['name' => 'Palani'],
+
+        ];
+   foreach ($Job_Location as $key => $joblocation) {
+            
+            JobLocation::Create($joblocation);
+        }
     }
 }
